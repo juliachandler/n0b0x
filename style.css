@@ -1,4 +1,8 @@
 /* N0B0X — shared stylesheet */
+@font-face{font-family:'NoboxMono';font-weight:400;font-style:normal;font-display:swap;
+  src:url('assets/nobox-mono.woff2') format('woff2');}
+@font-face{font-family:'NoboxMono';font-weight:700;font-style:normal;font-display:swap;
+  src:url('assets/nobox-mono-bold.woff2') format('woff2');}
 :root{
   --bg:#0e0d10;
   --bg-soft:#16151a;
@@ -35,9 +39,8 @@ nav{
   padding:1rem 1.25rem;
 }
 .brand{
-  font-family:"Inter","Helvetica Neue",Arial,sans-serif;
-  font-feature-settings:"zero" 1;font-variant-numeric:slashed-zero;
-  letter-spacing:.35em;font-weight:700;font-size:1.05rem;
+  font-family:"NoboxMono","Helvetica Neue",Arial,sans-serif;
+  letter-spacing:.30em;font-weight:700;font-size:1.05rem;
   color:var(--ink);
 }
 nav ul{list-style:none;display:flex;flex-wrap:wrap;gap:1.1rem;
@@ -110,15 +113,18 @@ figure.portrait figcaption{margin-top:.7rem;color:var(--muted);
 .note{border:1px dashed var(--line);border-radius:6px;padding:1rem 1.2rem;
   color:var(--muted);font-size:.92rem;background:rgba(255,255,255,.02)}
 
+/* Inline N0B0X wordmark in body text — embedded slashed-zero font */
+.nobox{font-family:"NoboxMono","Helvetica Neue",Arial,sans-serif;
+  letter-spacing:.02em}
+
 /* Footer */
 footer.site{border-top:1px solid var(--line);margin-top:3rem}
 footer.site .inner{max-width:var(--maxw);margin:0 auto;padding:2rem 1.25rem;
   display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;
   font-family:"Helvetica Neue",Arial,sans-serif;font-size:.82rem;color:var(--muted)}
 footer.site a{color:var(--muted)}
-footer.site .brand-sm{font-family:"Inter","Helvetica Neue",Arial,sans-serif;
-  font-feature-settings:"zero" 1;font-variant-numeric:slashed-zero;
-  letter-spacing:.3em;color:var(--ink)}
+footer.site .brand-sm{font-family:"NoboxMono","Helvetica Neue",Arial,sans-serif;
+  letter-spacing:.28em;color:var(--ink)}
 
 @media(max-width:560px){
   h1{font-size:2rem}
