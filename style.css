@@ -1,0 +1,127 @@
+/* N0B0X — shared stylesheet */
+:root{
+  --bg:#0e0d10;
+  --bg-soft:#16151a;
+  --ink:#ece9e4;
+  --muted:#a7a29b;
+  --accent:#c9794e;
+  --accent-soft:#e0a884;
+  --line:#2a2830;
+  --maxw:760px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:Georgia,"Times New Roman",serif;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent-soft);text-decoration:none}
+a:hover{color:var(--accent)}
+
+/* Nav */
+header.site{
+  position:sticky;top:0;z-index:10;
+  background:rgba(14,13,16,.86);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+nav{
+  max-width:var(--maxw);margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:.5rem 1.5rem;
+  padding:1rem 1.25rem;
+}
+.brand{
+  font-family:"Inter","Helvetica Neue",Arial,sans-serif;
+  font-feature-settings:"zero" 1;font-variant-numeric:slashed-zero;
+  letter-spacing:.35em;font-weight:700;font-size:1.05rem;
+  color:var(--ink);
+}
+nav ul{list-style:none;display:flex;flex-wrap:wrap;gap:1.1rem;
+  font-family:"Helvetica Neue",Arial,sans-serif;
+  font-size:.82rem;letter-spacing:.08em;text-transform:uppercase}
+nav ul a{color:var(--muted)}
+nav ul a:hover,nav ul a.active{color:var(--accent-soft)}
+
+/* Layout */
+main{max-width:var(--maxw);margin:0 auto;padding:3.5rem 1.25rem 4rem}
+section{margin-bottom:2.6rem}
+h1{font-size:2.6rem;line-height:1.15;font-weight:400;letter-spacing:.01em;margin-bottom:.4rem}
+h2{font-family:"Helvetica Neue",Arial,sans-serif;font-size:1.0rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--accent-soft);font-weight:600;margin:2.2rem 0 .9rem}
+h3{font-size:1.35rem;font-weight:400;margin:1.6rem 0 .5rem;color:var(--ink)}
+p{margin-bottom:1.1rem;color:#d9d5ce}
+.lead{font-size:1.2rem;color:var(--muted);font-style:italic}
+.muted{color:var(--muted)}
+ul.clean{list-style:none;margin:.4rem 0 1.4rem}
+ul.clean li{padding:.35rem 0 .35rem 1.4rem;position:relative;color:#d9d5ce}
+ul.clean li::before{content:"—";position:absolute;left:0;color:var(--accent)}
+
+/* Hero */
+.hero{position:relative;border-radius:6px;overflow:hidden;margin-bottom:2.5rem;
+  min-height:480px;display:flex;align-items:flex-end}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.hero .overlay{position:relative;z-index:2;padding:2.5rem 2rem;
+  background:linear-gradient(to top,rgba(8,7,10,.85),rgba(8,7,10,0));width:100%}
+.hero h1{margin-bottom:.2rem}
+.hero .tagline{font-size:1.35rem;color:var(--accent-soft);font-style:italic}
+
+/* Portrait */
+figure.portrait{text-align:center;margin:1.5rem auto 2rem}
+figure.portrait img{width:230px;max-width:70%;border-radius:4px;filter:grayscale(.15)}
+figure.portrait figcaption{margin-top:.7rem;color:var(--muted);
+  font-family:"Helvetica Neue",Arial,sans-serif;letter-spacing:.06em;font-size:.9rem}
+
+/* Text hero (home) */
+.hero-text{text-align:center;padding:3.4rem 1rem 2.8rem;margin-bottom:1.4rem;
+  border-bottom:1px solid var(--line)}
+.hero-text h1{margin-bottom:.5rem}
+.hero-text .tagline{font-size:1.15rem;color:var(--accent-soft);font-style:italic;
+  letter-spacing:.02em}
+
+/* Feature rows (home — concept + photo) */
+.feature{display:flex;gap:2rem;align-items:center;margin:2.6rem 0}
+.feature img{width:300px;max-width:46%;flex-shrink:0;border-radius:6px;
+  object-fit:cover;filter:grayscale(.08)}
+.feature .txt{flex:1}
+.feature.rev{flex-direction:row-reverse}
+@media(max-width:560px){
+  .feature,.feature.rev{flex-direction:column;text-align:center;gap:1.1rem}
+  .feature img{width:82%;max-width:330px}
+}
+
+/* Cards (destinations) */
+.card{border:1px solid var(--line);border-radius:6px;padding:1.4rem 1.6rem;margin-bottom:1.2rem;
+  background:var(--bg-soft)}
+.card h3{margin-top:0}
+
+/* Callout / contact */
+.callout{border-left:3px solid var(--accent);padding:.6rem 0 .6rem 1.2rem;
+  font-style:italic;color:var(--muted);margin:1.6rem 0}
+.btn{display:inline-block;font-family:"Helvetica Neue",Arial,sans-serif;
+  letter-spacing:.1em;text-transform:uppercase;font-size:.82rem;
+  border:1px solid var(--accent);color:var(--accent-soft);
+  padding:.7rem 1.4rem;border-radius:3px;margin-top:.4rem}
+.btn:hover{background:var(--accent);color:#0e0d10}
+
+.note{border:1px dashed var(--line);border-radius:6px;padding:1rem 1.2rem;
+  color:var(--muted);font-size:.92rem;background:rgba(255,255,255,.02)}
+
+/* Footer */
+footer.site{border-top:1px solid var(--line);margin-top:3rem}
+footer.site .inner{max-width:var(--maxw);margin:0 auto;padding:2rem 1.25rem;
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;
+  font-family:"Helvetica Neue",Arial,sans-serif;font-size:.82rem;color:var(--muted)}
+footer.site a{color:var(--muted)}
+footer.site .brand-sm{font-family:"Inter","Helvetica Neue",Arial,sans-serif;
+  font-feature-settings:"zero" 1;font-variant-numeric:slashed-zero;
+  letter-spacing:.3em;color:var(--ink)}
+
+@media(max-width:560px){
+  h1{font-size:2rem}
+  .hero{min-height:380px}
+  nav{justify-content:center}
+}
